@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wx_term_relationships",
+  "info": {
+    "singularName": "wx-term-relationship",
+    "pluralName": "wx-term-relationships",
+    "displayName": "wx_term_relationship"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "object_id": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "term_taxonomi_id": {
+      "type": "biginteger"
+    },
+    "term_order": {
+      "type": "integer"
+    },
+    "wx_post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wx-post.wx-post",
+      "inversedBy": "wx_term_relationships"
+    },
+    "wx_term_taxonomy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wx-term-taxonomy.wx-term-taxonomy",
+      "inversedBy": "wx_term_relationships"
+    }
+  }
+}

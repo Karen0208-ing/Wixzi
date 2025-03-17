@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wx_usermetas",
+  "info": {
+    "singularName": "wx-usermeta",
+    "pluralName": "wx-usermetas",
+    "displayName": "wx_usermeta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "umeta_id": {
+      "type": "biginteger"
+    },
+    "user_id": {
+      "type": "biginteger"
+    },
+    "meta_key": {
+      "type": "string"
+    },
+    "meta_value": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "wx_usermetas"
+    }
+  }
+}

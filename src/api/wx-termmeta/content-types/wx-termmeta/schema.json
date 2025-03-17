@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wx_termmetas",
+  "info": {
+    "singularName": "wx-termmeta",
+    "pluralName": "wx-termmetas",
+    "displayName": "wx_termmeta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_id": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "term_id": {
+      "type": "biginteger"
+    },
+    "meta_key": {
+      "type": "string"
+    },
+    "meta_value": {
+      "type": "string"
+    },
+    "wx_term": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wx-term.wx-term",
+      "inversedBy": "wx_termmetas"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wx_comments",
+  "info": {
+    "singularName": "wx-comment",
+    "pluralName": "wx-comments",
+    "displayName": "wx_comment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "comment_id": {
+      "type": "biginteger"
+    },
+    "comment_post_id": {
+      "type": "biginteger"
+    },
+    "comment_author": {
+      "type": "string"
+    },
+    "comment_author_email": {
+      "type": "string"
+    },
+    "comment_date": {
+      "type": "datetime"
+    },
+    "comment_content": {
+      "type": "string"
+    },
+    "comment_like": {
+      "type": "integer"
+    },
+    "comment_dislike": {
+      "type": "integer"
+    },
+    "comment_approved": {
+      "type": "string"
+    },
+    "comment_parent": {
+      "type": "biginteger"
+    },
+    "user_id": {
+      "type": "biginteger"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "wx_comments"
+    },
+    "wx_post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wx-post.wx-post",
+      "inversedBy": "wx_comments"
+    },
+    "wx_commentmetas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wx-commentmeta.wx-commentmeta",
+      "mappedBy": "wx_comment"
+    }
+  }
+}

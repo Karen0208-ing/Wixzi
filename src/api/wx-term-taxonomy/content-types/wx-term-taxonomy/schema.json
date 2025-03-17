@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wx_term_taxonomies",
+  "info": {
+    "singularName": "wx-term-taxonomy",
+    "pluralName": "wx-term-taxonomies",
+    "displayName": "wx_term_taxonomy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "term_taxonomy_id": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "term_id": {
+      "type": "biginteger"
+    },
+    "taxonomy": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "parent": {
+      "type": "biginteger"
+    },
+    "count": {
+      "type": "biginteger"
+    },
+    "wx_term": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wx-term.wx-term",
+      "inversedBy": "wx_term_taxonomies"
+    },
+    "wx_term_relationships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wx-term-relationship.wx-term-relationship",
+      "mappedBy": "wx_term_taxonomy"
+    }
+  }
+}

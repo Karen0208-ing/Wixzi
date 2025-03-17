@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wx_postmetas",
+  "info": {
+    "singularName": "wx-postmeta",
+    "pluralName": "wx-postmetas",
+    "displayName": "wx_postmeta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_id": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "post_id": {
+      "type": "biginteger"
+    },
+    "meta_key": {
+      "type": "text"
+    },
+    "meta_value": {
+      "type": "string"
+    },
+    "wx_post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wx-post.wx-post",
+      "inversedBy": "wx_postmetas"
+    }
+  }
+}

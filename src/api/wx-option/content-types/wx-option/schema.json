@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wx_options",
+  "info": {
+    "singularName": "wx-option",
+    "pluralName": "wx-options",
+    "displayName": "wx_option"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "option_id": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "option_key": {
+      "type": "string"
+    },
+    "option_value": {
+      "type": "text"
+    },
+    "autoload": {
+      "type": "string"
+    }
+  }
+}

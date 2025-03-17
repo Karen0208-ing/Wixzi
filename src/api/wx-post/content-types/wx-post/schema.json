@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wx_posts",
+  "info": {
+    "singularName": "wx-post",
+    "pluralName": "wx-posts",
+    "displayName": "wx_posts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "wx_id": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "post_author": {
+      "type": "biginteger"
+    },
+    "post_date": {
+      "type": "datetime"
+    },
+    "post_title": {
+      "type": "string"
+    },
+    "post_content": {
+      "type": "text"
+    },
+    "post_excerpt": {
+      "type": "string"
+    },
+    "post_status": {
+      "type": "string"
+    },
+    "post_name": {
+      "type": "string"
+    },
+    "post_modified": {
+      "type": "datetime"
+    },
+    "post_type": {
+      "type": "string"
+    },
+    "post_parent": {
+      "type": "biginteger"
+    },
+    "post_thumbnail": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "post_gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "comment_status": {
+      "type": "string"
+    },
+    "guid": {
+      "type": "string"
+    },
+    "menu_order": {
+      "type": "integer"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "wx_posts"
+    },
+    "wx_postmetas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wx-postmeta.wx-postmeta",
+      "mappedBy": "wx_post"
+    },
+    "wx_comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wx-comment.wx-comment",
+      "mappedBy": "wx_post"
+    },
+    "wx_term_relationships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wx-term-relationship.wx-term-relationship",
+      "mappedBy": "wx_post"
+    }
+  }
+}
